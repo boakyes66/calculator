@@ -1,0 +1,16 @@
+#loading, #results {
+    display: none;
+}
+/*.form-group {
+    border-radius: 70%;
+}*/
+
+/*::placeholder {*/ /* Chrome, Firefox, Opera, Safari 10.1+ */
+  /*color: white;
+  opacity: 100%;*/ /* Firefox */
+/*}
+
+:-ms-input-placeholder {*/ /* Internet Explorer 10-11 */
+    /*color: white;
+    opacity: 100%;
+}*/

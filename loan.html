@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loan Calculator</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.1.min.js"></script>
+
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="row" style="margin:0px 1% 5% 1%">
+            <div class="col-xs-12 mx-auto">
+                <div class="card card-body text-center mt-5">
+
+                    <h1 class="heading display-8 pb-3" style="color:forestgreen;font-size:x-large;font-weight:900">
+
+                        <div style="color:red" onclick="location.href= 'index.html'; return false;">
+
+                            <img src="data:image/jpg;base64,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" width="4%" style=" margin-top:-5px; color: GREEN; min-width: 25px; border-radius: 30%" /> HOME
+
+                        </div>
+                        <br />
+                        <div style="font-size:80%">LOAN CALCULATOR</div>
+                    </h1>
+
+
+                    <form id="loan-form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color:red;color:white">GH¢</span>
+                                </div>
+                                <input style="background-color:black;color:white" type="number" required="required" min=1 step=1 class="form-control" id="amount" placeholder="LOAN AMOUNT">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color:red;color:white">MONTHS</span>
+                                </div>
+                                <input style="background-color:black;color:white" type="number" required="required" min=1 max=1000 step=1 class="form-control" id="years" placeholder="MONTHS TO REPAY">
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="form-group">
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color:red;color:white">LOAN TYPE</span>
+                                </div>
+
+                                <select style="background-color: forestgreen; color: white; text-align-last: center" name="type" class="form-control" id="typee" onchange="ra()">
+                                    <option value="1">PERSONAL LOAN</option>
+                                    <option value="1">BUSINESS LOAN</option>
+
+                                    <option value="5">GROUP LOAN</option>
+                                    <option value="3">CHURCH FINANCE</option>
+
+                                    <option value="4">SALARY LOAN</option>
+                                    <option value="2">CASHBACK</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">INTEREST RATE %</span>
+                                </div>
+                                <input type="number" class="form-control" id="interest" readonly="readonly" value=48 placeholder="Interest" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">FACILITY FEE RATE %</span>
+                                </div>
+                                <input type="number" class="form-control" id="up" readonly="readonly" value=3.5 />
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <input type="submit" value="CALCULATE" class="btn btn-success btn-block" style="background-color:forestgreen;color:white">
+                        </div>
+                    </form>
+
+                    <!-- Loading Animation -->
+                    <div id="loading">
+                        <img src="images/loading.gif" alt="Loading Animation">
+                    </div>
+
+                    <!-- Results -->
+                    <div id="results" class="pt-4">
+                        <h5 style="color:forestgreen;font-size:x-large;font-weight:900">RESULTS (GH¢)</h5>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">DAILY PAYMENT</span>
+                                </div>
+                                <input type="text" class="form-control" id="daily-payment" disabled>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">WEEKLY PAYMENT</span>
+                                </div>
+                                <input type="text" class="form-control" id="weekly-payment" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">MONTHLY PAYMENT</span>
+                                </div>
+                                <input type="text" class="form-control" id="monthly-payment" disabled>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span style="background-color:red;color:white" class="input-group-text">TOTAL PAYMENT</span>
+                                </div>
+                                <input style="background-color:forestgreen;color:white" type="text" class="form-control" id="total-payment" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">MONTHLY INTEREST</span>
+                                </div>
+                                <input type="text" class="form-control" id="month-interest" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">TOTAL INTEREST</span>
+                                </div>
+                                <input type="text" class="form-control" id="total-interest" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color:red;color:white"> FACILITY FEE</span>
+                                </div>
+                                <input style="background-color:forestgreen;color:white" type="text" class="form-control" id="upfrontp" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <button style="font-size: 70%; border: hidden; background-color: transparent;  text-decoration: none" onclick="location.href='tel:+233248008581'">
+
+                        <input type="button" id="cc" style="width:185px;border:hidden;background-color:transparent " readonly="readonly" />
+
+
+                    </button>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="loan.js"></script>
+</body>
+</html>
